@@ -29,12 +29,10 @@ namespace mud
 		vec3 normal = quad_normal(quad);
 		for(int i = 0; i < 4; i++)
 		{
-			bool clockwise = true;
-			int index = clockwise ? i : 3 - i;
-			data.position(shape.m_position + quad.m_vertices[index])
+			data.position(shape.m_position + quad.m_vertices[i])
 				.colour(fill ? shape.m_symbol.m_fill : shape.m_symbol.m_outline)
 				.normal(normal)
-				.textureCoord(quadUVs[index]);
+				.textureCoord(quadUVs[i]);
 		}
 	}
 

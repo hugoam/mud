@@ -150,9 +150,9 @@ namespace mud
 		orthonormalize(transform, x, y, z);
 
 		mat4 result = transform;
-		result[0].x = x[0]; result[1].x = x[1]; result[1].x = x[1];
-		result[0].y = y[0]; result[1].y = y[1]; result[1].y = y[1];
-		result[0].z = z[0]; result[1].z = z[1]; result[1].z = z[1];
+		result[0].x = x[0]; result[1].x = x[1]; result[2].x = x[2];
+		result[0].y = y[0]; result[1].y = y[1]; result[2].y = y[2];
+		result[0].z = z[0]; result[1].z = z[1]; result[2].z = z[2];
 
 		return result;
 	}

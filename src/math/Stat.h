@@ -102,7 +102,7 @@ namespace mud
 		inline void decrement(T amount) { self()->def().decrement(this->m_value, amount); }
 
 		inline void increment() { self()->def().increment(this->m_value); }
-		inline void decrement() { self()->def().increment(this->m_value); }
+		inline void decrement() { self()->def().decrement(this->m_value); }
 
 		inline void multiply(T multiplier) { self()->def().multiply(this->m_value, this->m_base, multiplier); }
 	};

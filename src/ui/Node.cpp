@@ -292,7 +292,7 @@ namespace ui
 		NodeConnection connection = {};
 		
 		CanvasConnect& connect = canvas.m_connect;
-		if(connect.m_origin)
+		if(connect.m_origin && connect.m_in && connect.m_out)
 		{
 			vec2 target = canvas.m_plan->m_frame.local_position(connect.m_position);
 			Colour out_colour = connect.m_out ? connect.m_out->m_colour : connect.m_in->m_colour;

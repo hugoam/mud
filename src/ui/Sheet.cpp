@@ -141,7 +141,7 @@ namespace ui
 
 		if(&self == self.root_sheet().m_hovered)
 			self.root_sheet().m_cursor_style = dim == DIM_X ? &cursor_styles().resize_x
-															: &cursor_styles().resize_x;
+															: &cursor_styles().resize_y;
 
 		return drag_point;
 	}

@@ -527,12 +527,12 @@ namespace mud
 		{
 			if(m_select_from.m_index == SIZE_MAX)
 				m_select_from = m_selection.m_cursor;
-			this->select(m_select_from, dest, select && word_mode);
+			this->select(m_select_from, dest, word_mode);
 		}
 		else
 		{
 			m_select_from = {};
-			this->select(dest, select && word_mode);
+			this->select(dest, false);
 		}
 
 		m_follow_cursor = true;
@@ -817,9 +817,8 @@ namespace mud
 			{
 				if(current_line && selection.m_start == selection.m_end)
 				{
-					bool focused = false;
 					vec4 rect = { padding + vec2{ 0.f, row.m_rect.y }, vec2{ frame.m_size.x, text.line_height() } };
-					renderer.draw_rect(rect, { palette_colour(palette, focused ? Text::CurrentLineFill : Text::CurrentLineFillInactive),
+					renderer.draw_rect(rect, { palette_colour(palette, Text::CurrentLineFillInactive),
 											  palette_colour(palette, Text::CurrentLineEdge), 1.0f });
 				}
 				

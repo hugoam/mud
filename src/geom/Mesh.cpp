@@ -187,8 +187,7 @@ namespace mud
 		{
 			for(size_t i = 0; i < m_vertices.size(); i += 3)
 			{
-				int vert_smooth_group = 0;
-				if(vert_smooth_group != smooth_group)
+				if(smooth_group != 0)
 					continue;
 
 				ShapeVertex& v0 = m_vertices[i + 0];
@@ -197,18 +196,9 @@ namespace mud
 
 				vec3 normal = Plane(v0.m_position, v1.m_position, v2.m_position).m_normal;
 
-				if(smooth_group == 0)
-				{
-					v0.m_normal = normal;
-					v1.m_normal = normal;
-					v2.m_normal = normal;
-				}
-				else
-				{
-					//smooth_normals[v0.m_position] += normal;
-					//smooth_normals[v1.m_position] += normal;
-					//smooth_normals[v2.m_position] += normal;
-				}
+				v0.m_normal = normal;
+				v1.m_normal = normal;
+				v2.m_normal = normal;
 			}
 		
 			if(smooth_group == 0)

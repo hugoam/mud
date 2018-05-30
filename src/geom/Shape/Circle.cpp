@@ -40,7 +40,7 @@ namespace mud
 		if(!lines)
 			data.position(position)
 				.normal(to_vec3(axis))
-				.colour(lines ? shape.m_symbol.m_outline : shape.m_symbol.m_fill);
+				.colour(shape.m_symbol.m_outline);
 
 		return subdiv;
 	}

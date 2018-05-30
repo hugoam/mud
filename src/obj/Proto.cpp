@@ -14,6 +14,6 @@ namespace mud
 	{
 		for(Type* type : parts)
 			this->add_part(*type);
-		this->add_part(*this);
+		// this->add_part(*this);
 	}
 }
